@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Service &amp; Operations Portal | Watch Over Me&trade;</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/wom-shared.css">
+  <script src="/components/wom-nav.js" defer></script>
+  <style>
+    .wom-admin-wrap { max-width: 1380px; margin: 28px auto; padding: 0 24px; }
+    .wom-admin-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 24px; background: var(--bg-elevated); border: 2px solid var(--border-muted); border-radius: 16px; margin-bottom: 24px; }
+    .wom-admin-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; border-bottom: 2px solid var(--border-muted); padding-bottom: 14px; }
+    .wom-tab-btn { min-height: 48px; padding: 10px 20px; border-radius: 10px; border: 2px solid var(--border-muted); background: var(--bg-elevated); color: var(--text-main); font-weight: 800; font-size: 0.95rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+    .wom-tab-btn.active { border-color: var(--accent-cyan); background: rgb(37, 51, 71); color: var(--accent-cyan); }
+    .wom-tab-badge { background: rgba(56, 189, 248, 0.2); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 2px 8px; border-radius: 999px; font-size: 0.8rem; }
+    .wom-kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .wom-kpi-card { background: var(--bg-elevated); border: 2px solid var(--border-muted); border-radius: 14px; padding: 18px 20px; }
+    .wom-kpi-label { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); display: block; margin-bottom: 6px; }
+    .wom-kpi-val { font-size: 1.85rem; font-weight: 800; color: var(--text-main); }
+    .wom-panel { display: none; background: var(--bg-elevated); border: 2px solid var(--border-muted); border-radius: 16px; padding: 24px; }
+    .wom-panel.active { display: block; }
+    .wom-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .wom-search-input { min-height: 44px; min-width: 280px; padding: 8px 14px; border-radius: 10px; border: 2px solid var(--border-muted); background: var(--bg-dark); color: var(--text-main); font-size: 0.95rem; }
+    .wom-table-wrap { overflow-x: auto; }
+    .wom-admin-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.94rem; }
+    .wom-admin-table th { padding: 14px 12px; border-bottom: 2px solid var(--border-muted); color: var(--text-secondary); font-size: 0.82rem; text-transform: uppercase; }
+    .wom-admin-table td { padding: 14px 12px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); vertical-align: middle; }
+    .wom-status-pill { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; }
+    .wom-status-crit { background: rgba(248, 113, 113, 0.18); border: 1px solid #f87171; color: #f87171; }
+    .wom-status-warn { background: rgba(251, 191, 36, 0.18); border: 1px solid #fbbf24; color: #fbbf24; }
+    .wom-status-ok { background: rgba(74, 222, 128, 0.18); border: 1px solid #4ade80; color: #4ade80; }
+    .wom-status-info { background: rgba(56, 189, 248, 0.18); border: 1px solid #38bdf8; color: #38bdf8; }
+    .wom-action-btn { min-height: 38px; padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border-muted); background: var(--bg-dark); color: var(--text-main); font-weight: 700; font-size: 0.84rem; cursor: pointer; }
+    .wom-hw-thumb { width: 52px; height: 40px; object-fit: cover; border-radius: 6px; border: 1px solid var(--border-muted); vertical-align: middle; margin-right: 10px; }
+
+    .wom-inline-input, .wom-inline-select { min-height: 38px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border-muted); background: var(--bg-dark); color: var(--text-main); font-size: 0.86rem; }
+    .wom-btn-danger { border-color: #f87171; color: #f87171; background: rgba(248, 113, 113, 0.12); }
+    .wom-modal-backdrop { position: fixed; inset: 0; background: rgba(15,23,42,0.88); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 20px; }
+    .wom-modal-backdrop.active { display: flex; }
+    .wom-modal-card { max-width: 680px; width: 100%; background: var(--bg-elevated); border: 2px solid var(--accent-cyan); border-radius: 16px; padding: 24px; max-height: 90vh; overflow-y: auto; }
+  </style>
+</head>
+<body>
+  <wom-navigation active="admin"></wom-navigation>
+  <main id="main-content" class="wom-admin-wrap">
+    <div class="wom-admin-header">
+      <div>
+        <span class="wom-status-pill wom-status-info" style="margin-bottom:8px;">Unified Web &amp; Mobile CS Console</span>
+        <h1 style="margin:0; font-size:1.85rem;">Customer Service &amp; Operations Portal</h1>
+        <p style="margin:4px 0 0 0; color:var(--text-secondary); font-size:0.95rem;">Live Incident Response, Order Management (Model/Color/Sensors), iHost Edge Hubs, and Customer Profiles</p>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <span id="syncStatusBadge" class="wom-status-pill wom-status-ok">Live Connected</span>
+        <button type="button" class="wom-action-btn" onclick="refreshAllAdminData()">Refresh Live Data</button>
+      </div>
+    </div>
+
+    <div class="wom-kpi-grid">
+      <div class="wom-kpi-card"><span class="wom-kpi-label">Active Incidents / Alerts</span><div class="wom-kpi-val" id="kpiActiveIncidents" style="color:#f87171;">0</div></div>
+      <div class="wom-kpi-card"><span class="wom-kpi-label">Orders in Queue</span><div class="wom-kpi-val" id="kpiPendingOrders" style="color:var(--accent-cyan);">0</div></div>
+      <div class="wom-kpi-card"><span class="wom-kpi-label">Online iHost Edge Hubs</span><div class="wom-kpi-val" id="kpiOnlineHubs" style="color:#4ade80;">0</div></div>
+      <div class="wom-kpi-card"><span class="wom-kpi-label">Monitored Zigbee Sensors</span><div class="wom-kpi-val" id="kpiActiveSensors">0</div></div>
+    </div>
+
+    <div class="wom-admin-tabs" role="tablist">
+      <button type="button" class="wom-tab-btn active" id="tabBtn_incidents" onclick="switchAdminTab('incidents')">1. Incidents &amp; Alerts <span class="wom-tab-badge" id="badge_incidents">0</span></button>
+      <button type="button" class="wom-tab-btn" id="tabBtn_orders" onclick="switchAdminTab('orders')">2. Order Management <span class="wom-tab-badge" id="badge_orders">0</span></button>
+      <button type="button" class="wom-tab-btn" id="tabBtn_hubs" onclick="switchAdminTab('hubs')">3. Hubs &amp; Sensor Telemetry <span class="wom-tab-badge" id="badge_hubs">0</span></button>
+      <button type="button" class="wom-tab-btn" id="tabBtn_customers" onclick="switchAdminTab('customers')">4. Customer Profiles <span class="wom-tab-badge" id="badge_customers">0</span></button>
+    </div>
+
+    <section id="panel_incidents" class="wom-panel active">
+      <div class="wom-toolbar">
+        <h2 style="margin:0; font-size:1.35rem;">Active Incidents, Routine Deviations &amp; SOS Alerts</h2>
+        <div style="display:flex; gap:10px;">
+          <input type="search" id="searchIncidents" class="wom-search-input" placeholder="Search resident, hub, or sensor..." oninput="renderIncidentsTable()">
+          
+        </div>
+      </div>
+      <div class="wom-table-wrap"><table class="wom-admin-table"><thead><tr><th>Severity</th><th>Time</th><th>Resident</th><th>Hub &amp; Sensor</th><th>Details</th><th>Status</th><th>Action</th></tr></thead><tbody id="incidentsTableBody"></tbody></table></div>
+    </section>
+
+    <section id="panel_orders" class="wom-panel">
+      <div class="wom-toolbar">
+        <h2 style="margin:0; font-size:1.35rem;">Order Management &amp; Hardware Kit Fulfillment</h2>
+        <input type="search" id="searchOrders" class="wom-search-input" placeholder="Search order ID, customer, model, finish..." oninput="renderOrdersTable()">
+      </div>
+      <div class="wom-table-wrap"><table class="wom-admin-table"><thead><tr><th>Order ID &amp; Date</th><th>Customer &amp; Shipping</th><th>Architectural Model &amp; Finish</th><th>Items Manifest</th><th>Tracking &amp; Carrier</th><th>Total</th><th>Status</th><th>Action</th></tr></thead><tbody id="ordersTableBody"></tbody></table></div>
+    </section>
+
+    <section id="panel_hubs" class="wom-panel">
+      <div class="wom-toolbar">
+        <h2 style="margin:0; font-size:1.35rem;">iHost Edge Hubs &amp; Zigbee Sensor Telemetry</h2>
+        <div style="display:flex;gap:10px;"><input type="search" id="searchHubs" class="wom-search-input" placeholder="Filter by Hub ID or resident..." oninput="renderHubsTable()"><button type="button" class="wom-action-btn" onclick="openHubEditor(null)">+ Register Hub in Supabase</button></div>
+      </div>
+      <div class="wom-table-wrap"><table class="wom-admin-table"><thead><tr><th>Hub ID &amp; Style</th><th>Resident</th><th>Failover Link</th><th>Daemon Heartbeat</th><th>Paired Sensors</th><th>Action</th></tr></thead><tbody id="hubsTableBody"></tbody></table></div>
+    </section>
+
+    <section id="panel_customers" class="wom-panel">
+      <div class="wom-toolbar">
+        <h2 style="margin:0; font-size:1.35rem;">Customer Profiles &amp; Caregiver Contacts</h2>
+        <input type="search" id="searchCustomers" class="wom-search-input" placeholder="Filter customers..." oninput="renderCustomersTable()">
+      </div>
+      <div class="wom-table-wrap"><table class="wom-admin-table"><thead><tr><th>Customer &amp; Source</th><th>Monitored Household</th><th>Hardware &amp; Plan</th><th>Created At</th><th>Last Edited / Updated</th><th>Status</th><th>Action</th></tr></thead><tbody id="customersTableBody"></tbody></table></div>
+    </section>
+
+    <div id="hubEditModal" class="wom-modal-backdrop" role="dialog" aria-modal="true">
+      <div class="wom-modal-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+          <h2 id="hubModalTitle" style="margin:0;font-size:1.25rem;">Edit Hub &amp; Paired Zigbee Sensors</h2>
+          <button type="button" class="wom-action-btn" onclick="closeHubEditor()">&times; Close</button>
+        </div>
+        <form onsubmit="saveHubEdits(event)">
+          <input type="hidden" id="editHubOrigId">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+            <input type="text" id="editHubId" class="wom-inline-input" placeholder="Hub ID" required>
+            <input type="text" id="editHubResident" class="wom-inline-input" placeholder="Resident Name" required>
+            <input type="text" id="editHubStyle" class="wom-inline-input" placeholder="Enclosure Style & Finish" required>
+            <input type="text" id="editHubConn" class="wom-inline-input" placeholder="Connection & Failover" required>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <strong style="color:var(--accent-cyan);font-size:0.85rem;">Paired Zigbee Sensors (Name, Type, Battery %, State)</strong>
+            <button type="button" class="wom-action-btn" onclick="addSensorRowToModal()">+ Add Sensor</button>
+          </div>
+          <div id="modalSensorList" style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px;"></div>
+          <div style="display:flex;justify-content:flex-end;gap:10px;">
+            <button type="button" class="wom-action-btn" onclick="closeHubEditor()">Cancel</button>
+            <button type="submit" class="wom-btn wom-btn-primary" style="padding:8px 18px;">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="custEditModal" class="wom-modal-backdrop" role="dialog" aria-modal="true">
+      <div class="wom-modal-card" style="max-width:520px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+          <h2 style="margin:0;font-size:1.25rem;">Edit Customer Profile</h2>
+          <button type="button" class="wom-action-btn" onclick="closeCustEditor()">&times; Close</button>
+        </div>
+        <form onsubmit="saveCustEdits(event)">
+          <input type="hidden" id="editCustId">
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">
+            <label style="font-size:0.8rem;color:var(--text-secondary);">Full Name
+              <input type="text" id="editCustName" class="wom-inline-input" style="width:100%;box-sizing:border-box;margin-top:4px;" required>
+            </label>
+            <label style="font-size:0.8rem;color:var(--text-secondary);">Email Address
+              <input type="email" id="editCustEmail" class="wom-inline-input" style="width:100%;box-sizing:border-box;margin-top:4px;" required>
+            </label>
+            <label style="font-size:0.8rem;color:var(--text-secondary);">Monitored Household / Resident
+              <input type="text" id="editCustResident" class="wom-inline-input" style="width:100%;box-sizing:border-box;margin-top:4px;" required>
+            </label>
+            <label style="font-size:0.8rem;color:var(--text-secondary);">Escalation Contacts / Phone
+              <input type="text" id="editCustContacts" class="wom-inline-input" style="width:100%;box-sizing:border-box;margin-top:4px;">
+            </label>
+          </div>
+          <div style="display:flex;justify-content:flex-end;gap:10px;">
+            <button type="button" class="wom-action-btn" onclick="closeCustEditor()">Cancel</button>
+            <button type="submit" class="wom-btn wom-btn-primary" style="padding:8px 18px;">Save Profile</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <wom-footer></wom-footer>
+  <script src="/admin-portal.js"></script>
+
+<!-- WOM 1-CLICK SUPABASE PRODUCT REVIEW MODERATION PANEL -->
+
+<!-- INFINITE SOLUTIONS MULTI-BRAND DOMAIN & LOGIN AWARE CS/ADMIN ENGINE -->
+<section id="is-multibrand-cs-console" style="max-width:1240px; margin:28px auto; padding:0 24px;">
+  <div style="background:#0f172a; border:2px solid #38bdf8; border-radius:14px; padding:18px 22px; margin-bottom:22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;">
+    <div>
+      <span id="isActiveDomainBadge" style="display:inline-block; background:rgba(56,189,248,0.18); color:#38bdf8; font-size:0.75rem; font-weight:800; padding:3px 10px; border-radius:999px; text-transform:uppercase; margin-bottom:4px;">ACTIVE DOMAIN SCOPE</span>
+      <h2 id="isActiveBrandHeading" style="margin:0; font-size:1.35rem; color:#f8fafc;">Infinite Solutions LLC — Unified CS &amp; Ratings Portal</h2>
+      <div id="isActiveLoginSub" style="font-size:0.85rem; color:#94a3b8; margin-top:2px;">Auto-scoped by current domain &amp; authenticated admin session</div>
+    </div>
+    <div id="isBrandSelectorWrap" style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+      <span style="font-size:0.8rem; color:#cbd5e1; font-weight:700;">Property Scope:</span>
+      <button type="button" id="brandBtn_auto" onclick="window.setIsBrandScope('auto')" style="background:#0284c7; color:#fff; border:none; border-radius:6px; padding:8px 12px; font-weight:700; cursor:pointer;">Domain Default</button>
+      <button type="button" id="brandBtn_wom" onclick="window.setIsBrandScope('wom')" style="background:#1e293b; color:#cbd5e1; border:1px solid #334155; border-radius:6px; padding:8px 12px; font-weight:700; cursor:pointer;">Watch Over Me™</button>
+      <button type="button" id="brandBtn_surepups" onclick="window.setIsBrandScope('surepups')" style="background:#1e293b; color:#cbd5e1; border:1px solid #334155; border-radius:6px; padding:8px 12px; font-weight:700; cursor:pointer;">SurePups Mobility™</button>
+      <button type="button" id="brandBtn_all" onclick="window.setIsBrandScope('all')" style="background:#1e293b; color:#cbd5e1; border:1px solid #334155; border-radius:6px; padding:8px 12px; font-weight:700; cursor:pointer;">All Brands</button>
+    </div>
+  </div>
+</section>
+<script>
+(function() {
+  function detectDefaultBrandFromDomainAndLogin() {
+    var host = (window.location.hostname || '').toLowerCase();
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('brand')) return params.get('brand').toLowerCase();
+    if (host.indexOf('surepups') !== -1 || host.indexOf('infinitesolutions') !== -1) {
+      return 'surepups';
+    }
+    return 'wom';
+  }
+
+  function isSurePupsSku(sku) {
+    var s = String(sku || '').toUpperCase();
+    return s.indexOf('SP-') === 0 || s.indexOf('SUREPUPS') !== -1 || s.indexOf('CART') !== -1;
+  }
+
+  window.currentIsBrandScope = 'auto';
+
+  window.getEffectiveBrandScope = function() {
+    if (window.currentIsBrandScope === 'auto') {
+      return detectDefaultBrandFromDomainAndLogin();
+    }
+    return window.currentIsBrandScope;
+  };
+
+  window.setIsBrandScope = function(scope) {
+    window.currentIsBrandScope = scope;
+    ['auto', 'wom', 'surepups', 'all'].forEach(function(k) {
+      var b = document.getElementById('brandBtn_' + k);
+      if (b) {
+        b.style.background = (k === scope) ? '#0284c7' : '#1e293b';
+        b.style.color = (k === scope) ? '#fff' : '#cbd5e1';
+      }
+    });
+    var eff = window.getEffectiveBrandScope();
+    var badge = document.getElementById('isActiveDomainBadge');
+    var heading = document.getElementById('isActiveBrandHeading');
+    var sessionRaw = localStorage.getItem('wom_user_session') || localStorage.getItem('sp_user_session') || '{}';
+    var email = 'admin@watchoverme.app';
+    try { email = JSON.parse(sessionRaw).email || email; } catch (e) {}
+
+    if (badge) {
+      badge.textContent = 'DOMAIN: ' + (window.location.hostname || 'LOCAL') + ' • SCOPE: ' + eff.toUpperCase();
+    }
+    if (heading) {
+      if (eff === 'surepups') heading.textContent = 'SurePups Mobility™ — Customer Service & Ratings Portal';
+      else if (eff === 'wom') heading.textContent = 'Watch Over Me™ — Customer Service & Ratings Portal';
+      else heading.textContent = 'Infinite Solutions LLC — All Properties CS & Ratings Portal';
+    }
+    var sub = document.getElementById('isActiveLoginSub');
+    if (sub) {
+      sub.textContent = 'Authenticated Session: ' + email + ' • Filtering reviews & inquiries for ' + eff.toUpperCase();
+    }
+    if (window.loadCsReviewsAndLeads) window.loadCsReviewsAndLeads();
+    if (window.loadAdminReviews) window.loadAdminReviews();
+  };
+
+  window.matchesActiveBrandSku = function(sku) {
+    var eff = window.getEffectiveBrandScope();
+    if (eff === 'all') return true;
+    if (eff === 'surepups') return isSurePupsSku(sku);
+    return !isSurePupsSku(sku);
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    window.setIsBrandScope('auto');
+  });
+})();
+</script>
+
+<section id="wom-admin-reviews-panel" style="max-width:1200px; margin:36px auto; padding:0 24px;">
+  <div style="background:#1e293b; border:2px solid #334155; border-radius:14px; padding:24px; color:#f8fafc;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+      <div>
+        <h2 style="margin:0 0 4px 0; font-size:1.35rem; color:#38bdf8;">Customer Product Reviews Moderation (Supabase)</h2>
+        <p style="margin:0; font-size:0.9rem; color:#cbd5e1;">Approve reviews here to publish them immediately to the website and Google Search Console JSON-LD.</p>
+      </div>
+      <button type="button" onclick="window.loadAdminReviews()" style="background:#0284c7; color:#fff; border:none; border-radius:8px; padding:10px 16px; font-weight:700; cursor:pointer;">↻ Refresh Reviews</button>
+    </div>
+    <div id="wom-admin-reviews-table" style="font-size:0.92rem; color:#cbd5e1;">Loading reviews...</div>
+  </div>
+</section>
+<script>
+(function() {
+  var SB_URL = 'https://fcpexvejdqvizvrwvyce.supabase.co';
+  var SB_KEY = 'sb_publishable_CyXe5d6LLrcbssGfXOHHSg_i83EbGpW';
+
+  window.loadAdminReviews = async function() {
+    var box = document.getElementById('wom-admin-reviews-table');
+    if (!box) return;
+    try {
+      var res = await fetch(SB_URL + '/rest/v1/product_reviews?select=*&order=created_at.desc', {
+        headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY }
+      });
+      var rows = await res.json();
+      if (!Array.isArray(rows) || rows.length === 0) {
+        box.innerHTML = '<p>No reviews in public.product_reviews yet.</p>';
+        return;
+      }
+      box.innerHTML = rows.filter(function(r) { return !window.matchesActiveBrandSku || window.matchesActiveBrandSku(r.product_sku); }).map(function(r) {
+        var badge = r.approved
+          ? '<span style="background:rgba(34,197,94,0.18); color:#4ade80; padding:3px 8px; border-radius:6px; font-size:0.8rem; font-weight:700;">APPROVED (LIVE)</span>'
+          : '<span style="background:rgba(245,158,11,0.2); color:#fbbf24; padding:3px 8px; border-radius:6px; font-size:0.8rem; font-weight:700;">PENDING MODERATION</span>';
+        return '<div style="background:#0f172a; border:1px solid #334155; border-radius:10px; padding:14px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">' +
+          '<div style="max-width:720px;">' +
+            '<div style="margin-bottom:6px;"><strong>' + (r.reviewer_name || 'Customer') + '</strong> • <span style="color:#f59e0b;">' + '★'.repeat(r.rating || 5) + '</span> • <code style="color:#38bdf8;">' + (r.product_sku || 'WOM-AMB-KITS') + '</code> ' + badge + '</div>' +
+            '<div style="color:#e2e8f0;">"' + (r.comment || '') + '"</div>' +
+          '</div>' +
+          '<div style="display:flex; gap:8px; flex-wrap:wrap;">' +
+            '<button type="button" onclick="window.toggleReviewApproval('' + r.id + '', ' + (!r.approved) + ')" style="background:' + (r.approved ? '#475569' : '#16a34a') + '; color:#fff; border:none; border-radius:6px; padding:8px 12px; font-weight:700; cursor:pointer;">' + (r.approved ? 'Unapprove' : '✓ Approve') + '</button>' +
+            '<button type="button" onclick="window.toggleReviewVerified('' + r.id + '', ' + (!r.verified_purchase) + ')" style="background:#0369a1; color:#fff; border:none; border-radius:6px; padding:8px 12px; font-weight:700; cursor:pointer;">' + (r.verified_purchase ? 'Unmark Verified' : 'Mark Verified Buyer') + '</button>' +
+            '<button type="button" onclick="window.deleteWomReview('' + r.id + '')" style="background:#b91c1c; color:#fff; border:none; border-radius:6px; padding:8px 12px; font-weight:700; cursor:pointer;">Delete</button>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    } catch (e) {
+      box.innerHTML = '<p style="color:#ef4444;">Failed to load reviews: ' + e.message + '</p>';
+    }
+  };
+
+  window.toggleReviewApproval = async function(id, nextState) {
+    await fetch(SB_URL + '/rest/v1/product_reviews?id=eq.' + encodeURIComponent(id), {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY },
+      body: JSON.stringify({ approved: nextState })
+    });
+    window.loadAdminReviews();
+  };
+
+  window.toggleReviewVerified = async function(id, nextState) {
+    await fetch(SB_URL + '/rest/v1/product_reviews?id=eq.' + encodeURIComponent(id), {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY },
+      body: JSON.stringify({ verified_purchase: nextState })
+    });
+    window.loadAdminReviews();
+  };
+
+  window.deleteWomReview = async function(id) {
+    if (!confirm('Delete this review permanently?')) return;
+    await fetch(SB_URL + '/rest/v1/product_reviews?id=eq.' + encodeURIComponent(id), {
+      method: 'DELETE',
+      headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY }
+    });
+    window.loadAdminReviews();
+  };
+
+  document.addEventListener('DOMContentLoaded', window.loadAdminReviews);
+})();
+</script>
+
+</body>
+</html>
