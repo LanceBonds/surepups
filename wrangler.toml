@@ -1,0 +1,12 @@
+name = "surepups-web"
+main = "src/index.js"
+compatibility_date = "2024-10-01"
+
+routes = [
+  { pattern = "surepups.com", custom_domain = true },
+  { pattern = "www.surepups.com", custom_domain = true }
+]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
