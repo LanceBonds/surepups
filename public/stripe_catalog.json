@@ -1,0 +1,36 @@
+{
+  "tiers": {
+    "mini": {
+      "name": "SurePups Custom Mobility Cart \u2014 Mini Class (< 25 lbs)",
+      "price_cents": 24500,
+      "sku": "SP-CART-MINI"
+    },
+    "standard": {
+      "name": "SurePups Custom Mobility Cart \u2014 Standard Class (25\u201360 lbs)",
+      "price_cents": 26500,
+      "sku": "SP-CART-STD"
+    },
+    "heavy": {
+      "name": "SurePups Custom Mobility Cart \u2014 Heavy Duty Class (60\u2013110+ lbs)",
+      "price_cents": 29500,
+      "sku": "SP-CART-HD"
+    }
+  },
+  "addons": {
+    "stirrup": {
+      "name": "Rear Limb Padded Stirrup Sling Kit",
+      "price_cents": 2400,
+      "sku": "SP-ADD-SLING"
+    },
+    "saddle": {
+      "name": "Spare Washable Neoprene Pelvic Saddle",
+      "price_cents": 3500,
+      "sku": "SP-ADD-SADDLE"
+    },
+    "rush": {
+      "name": "Priority 48-Hour Rush Fabrication",
+      "price_cents": 4500,
+      "sku": "SP-ADD-RUSH"
+    }
+  }
+}

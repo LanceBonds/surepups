@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+    if ('caches' in window) {
+      caches.keys().then(function(names) {
+        for (let name of names) caches.delete(name);
+      });
+    }
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SurePups Mobility | Custom Parametric Canine Carts</title>
@@ -348,14 +364,14 @@
           <h3 class="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2">Optional Accessories &amp; Upgrades</h3>
           <label class="addon-card bg-slate-950 border border-slate-800 rounded-xl p-3.5 flex items-center justify-between cursor-pointer">
             <div class="flex items-center space-x-3">
-              <input type="checkbox" class="addon-cb w-4 h-4 rounded border-slate-700 text-cyan-500" data-name="Rear Limb Stirrup Sling Kit" data-price="24" onchange="recalculateTotal()">
+              <input type="checkbox" class="addon-cb w-4 h-4 rounded border-slate-700 text-cyan-500" data-key="stirrup" data-name="Rear Limb Stirrup Sling Kit" data-price="24" onchange="recalculateTotal()">
               <span class="text-xs font-bold text-white">Rear Limb Padded Stirrup Sling Kit</span>
             </div>
             <span class="text-xs font-bold text-cyan-400">+$24</span>
           </label>
           <label class="addon-card bg-slate-950 border border-slate-800 rounded-xl p-3.5 flex items-center justify-between cursor-pointer">
             <div class="flex items-center space-x-3">
-              <input type="checkbox" class="addon-cb w-4 h-4 rounded border-slate-700 text-cyan-500" data-name="Spare Washable Neoprene Pelvic Saddle" data-price="35" onchange="recalculateTotal()">
+              <input type="checkbox" class="addon-cb w-4 h-4 rounded border-slate-700 text-cyan-500" data-key="saddle" data-name="Spare Washable Neoprene Pelvic Saddle" data-price="35" onchange="recalculateTotal()">
               <span class="text-xs font-bold text-white">Spare Washable Neoprene Pelvic Saddle</span>
             </div>
             <span class="text-xs font-bold text-cyan-400">+$35</span>
@@ -503,10 +519,20 @@
           if (supabaseClient) {
             await supabaseClient.from('cart_leads').insert([payload]);
           }
+          const addonKeys = [];
+          document.querySelectorAll('.addon-cb:checked').forEach(cb => {
+            if (cb.dataset.key) addonKeys.push(cb.dataset.key);
+          });
+          const orderRef = 'SP-' + Date.now().toString(36).toUpperCase();
           const res = await fetch('/api/v1/checkout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ ...payload, total_cents: Math.round(window.currentTotalPrice * 100) })
+            body: JSON.stringify({
+              ...payload,
+              order_ref: orderRef,
+              addon_keys: addonKeys,
+              total_cents: Math.round(window.currentTotalPrice * 100)
+            })
           });
           if (res.ok) {
             const d = await res.json();
