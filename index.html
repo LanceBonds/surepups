@@ -1,304 +1,941 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
+  <!-- 1. Primary Meta Tags (Must be first) -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://www.surepups.com/">
-  <title>Configure Custom Dog Mobility Cart | SurePups Mobility™</title>
-  <meta name="description" content="Custom 3D-printed parametric dog mobility and rehabilitation carts crafted with 6061-T6 brushed aluminum rails, TPU protective bumpers, and 8-inch all-terrain wheels.">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://www.surepups.com/#organization",
-        "name": "SurePups Mobility™",
-        "legalName": "Infinite Solutions LLC",
-        "url": "https://www.surepups.com/"
-      },
-      {
-        "@type": "ProductGroup",
-        "@id": "https://www.surepups.com/#mobility-carts",
-        "name": "SurePups™ Custom 3D-Printed Parametric Dog Mobility Carts",
-        "productGroupID": "SP-MOBILITY-CARTS",
-        "brand": { "@type": "Brand", "name": "SurePups Mobility™" },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": "1",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "review": [{
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Marcus & Barnaby" },
-          "datePublished": "2026-10-20",
-          "reviewBody": "The 6061-T6 brushed aluminum rails and custom 3D-printed parametric saddle fit our senior dog on the first try. Rolling smoothly on trails again!",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
-        }],
-        "hasVariant": [
-          {
-            "@type": "Product",
-            "sku": "SP-CART-SM-349",
-            "name": "SurePups™ Custom Mobility Cart — Small/Medium (10–35 lbs)",
-            "image": "https://www.surepups.com/assets/cart-small.jpg",
-            "description": "Custom parametric 3D-printed dog wheelchair kit with 6061-T6 brushed aluminum side rails and 8-inch spoked all-terrain wheels.",
-            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1" },
-            "offers": {
-              "@type": "Offer",
-              "url": "https://www.surepups.com/store?size=small",
-              "priceCurrency": "USD",
-              "price": "349.00",
-              "validFrom": "2026-09-01T00:00:00Z",
-              "priceValidUntil": "2027-12-31",
-              "availability": "https://schema.org/InStock",
-              "itemCondition": "https://schema.org/NewCondition",
-              "hasMerchantReturnPolicy": {
-                "@type": "MerchantReturnPolicy",
-                "applicableCountry": "US",
-                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-                "merchantReturnDays": 30,
-                "returnMethod": "https://schema.org/ReturnByMail",
-                "returnFees": "https://schema.org/FreeReturn"
-              },
-              "shippingDetails": {
-                "@type": "OfferShippingDetails",
-                "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
-                "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" },
-                "deliveryTime": {
-                  "@type": "ShippingDeliveryTime",
-                  "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "DAY" },
-                  "transitTime": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "DAY" }
-                }
-              }
-            }
-          },
-          {
-            "@type": "Product",
-            "sku": "SP-CART-LG-399",
-            "name": "SurePups™ Custom Mobility Cart — Large/Doodle (36–85 lbs)",
-            "image": "https://www.surepups.com/assets/cart-large.jpg",
-            "description": "Heavy-duty parametric 3D-printed rehabilitation cart with 6061-T6 brushed aluminum side rails, TPU bumper caps, and 8-inch spoked all-terrain rubber wheels.",
-            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1" },
-            "offers": {
-              "@type": "Offer",
-              "url": "https://www.surepups.com/store?size=large",
-              "priceCurrency": "USD",
-              "price": "399.00",
-              "validFrom": "2026-09-01T00:00:00Z",
-              "priceValidUntil": "2027-12-31",
-              "availability": "https://schema.org/InStock",
-              "itemCondition": "https://schema.org/NewCondition",
-              "hasMerchantReturnPolicy": {
-                "@type": "MerchantReturnPolicy",
-                "applicableCountry": "US",
-                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-                "merchantReturnDays": 30,
-                "returnMethod": "https://schema.org/ReturnByMail",
-                "returnFees": "https://schema.org/FreeReturn"
-              },
-              "shippingDetails": {
-                "@type": "OfferShippingDetails",
-                "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
-                "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" },
-                "deliveryTime": {
-                  "@type": "ShippingDeliveryTime",
-                  "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "DAY" },
-                  "transitTime": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "DAY" }
-                }
-              }
-            }
-          }
-        ]
-      }
-    ]
-  }
+  <title>SurePups Mobility | Custom Parametric Canine Carts</title>
+  <meta name="description" content="Custom-fit 6061-T6 aluminum canine mobility carts with anti-tip cambered wheels, soft-touch bumpers, and padded pelvic support.">
+
+  <!-- 2. Google tag (gtag.js) for GA4 & Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // Replace G-XXXXXXXXXX with your actual GA4 Measurement ID
+    gtag('config', 'G-XXXXXXXXXX');
   </script>
+  
+  <!-- 3. Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  
+  <!-- 4. CDNs: Tailwind, Lucide, and Supabase JS Client -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+    body {
+      background-color: #030712;
+      color: #f3f4f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .glass-nav {
+      background: rgba(3, 7, 18, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .thumb-btn.active {
+      border-color: #00c2f8;
+      box-shadow: 0 0 15px rgba(0, 194, 248, 0.35);
+    }
+  </style>
 </head>
-<body style="margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#0f172a; color:#f8fafc;">
-  <header style="background:#1e293b; border-bottom:1px solid #334155; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-    <a href="/" style="color:#f8fafc; text-decoration:none; font-size:1.35rem; font-weight:800;">SurePups Mobility™ <span style="font-size:0.8rem; color:#38bdf8; font-weight:600;">by Infinite Solutions LLC</span></a>
-    <nav style="display:flex; gap:16px; align-items:center;">
-      <a href="/store.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">Custom Cart Configurator</a>
-      <a href="#sp-reviews-section" style="color:#cbd5e1; text-decoration:none; font-weight:600;">Verified Reviews</a>
-      <a href="/cs-portal.html" style="color:#94a3b8; text-decoration:none; font-size:0.85rem;">CS Portal</a>
-    </nav>
-  </header>
+<body class="bg-gray-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
 
-  <main style="max-width:1200px; margin:36px auto; padding:0 24px;">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:32px; align-items:start;">
-      <div style="background:#1e293b; border:2px solid #334155; border-radius:16px; padding:26px;">
-        <span style="display:inline-block; background:rgba(56,189,248,0.15); color:#38bdf8; font-weight:800; font-size:0.78rem; padding:4px 10px; border-radius:999px; margin-bottom:10px;">6061-T6 BRUSHED ALUMINUM • PARAMETRIC 3D FIT</span>
-        <h1 style="margin:0 0 10px 0; font-size:1.85rem;">Configure Your Dog's Custom Mobility Cart</h1>
-        <p style="color:#cbd5e1; line-height:1.6;">Engineered on our Creality K1 Max production line with 6061-T6 brushed aluminum side rails, impact-absorbing TPU bumper caps, 8-inch spoked all-terrain rubber wheels, and a washable padded chest harness.</p>
+  <!-- ================= TOP NAVIGATION ================= -->
+  <nav class="fixed top-0 inset-x-0 z-50 glass-nav border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3 group" aria-label="SurePups Home">
+        <img
+          src="logo-transparent.png"
+          alt="SurePups Mobility Logo"
+          class="h-10 w-auto max-w-[140px] object-contain transition-transform duration-300 group-hover:scale-105"
+        >
+        <span class="text-xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
+          Sure<span class="text-cyan-400 group-hover:text-white transition-colors">Pups</span>
+        </span>
+      </a>
 
-        <div style="margin:20px 0;">
-          <label style="display:block; font-weight:700; font-size:0.9rem; margin-bottom:6px; color:#cbd5e1;">1. Select Frame &amp; Weight Class</label>
-          <select id="spSizeSelect" onchange="window.recalcSpCart()" style="width:100%; padding:12px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:#f8fafc; font-size:1rem;">
-            <option value="SP-CART-SM-349" data-price="349">Small / Medium Frame (10–35 lbs) — $349.00</option>
-            <option value="SP-CART-LG-399" data-price="399" selected>Large / Doodle Frame (36–85 lbs) — $399.00</option>
-          </select>
-        </div>
-
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
-          <div>
-            <label style="display:block; font-weight:700; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">2. Dog Name</label>
-            <input type="text" id="spDogName" placeholder="e.g. Starbuck" style="width:100%; padding:10px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:#f8fafc; box-sizing:border-box;">
-          </div>
-          <div>
-            <label style="display:block; font-weight:700; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">3. Floor-to-Groin Height (in)</label>
-            <input type="number" id="spLegHeight" value="14" min="5" max="28" style="width:100%; padding:10px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:#f8fafc; box-sizing:border-box;">
-          </div>
-        </div>
-
-        <div style="margin-bottom:18px;">
-          <label style="display:block; font-weight:700; font-size:0.9rem; margin-bottom:6px; color:#cbd5e1;">4. TPU Bumper &amp; Saddle Accent Color</label>
-          <select id="spColorSelect" onchange="window.recalcSpCart()" style="width:100%; padding:12px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:#f8fafc;">
-            <option value="Charcoal Slate">Charcoal Slate TPU + Brushed Aluminum</option>
-            <option value="Forest Pine">Forest Pine TPU + Brushed Aluminum</option>
-            <option value="Craftsman Bronze">Craftsman Bronze TPU + Brushed Aluminum</option>
-          </select>
-        </div>
-
-        <div style="margin-bottom:20px;">
-          <label style="display:flex; align-items:center; gap:10px; cursor:pointer; margin-bottom:8px;">
-            <input type="checkbox" id="spExtraHarness" onchange="window.recalcSpCart()" style="width:20px; height:20px;">
-            <span>+ Add Spare Washable Padded Harness Set ($59.00)</span>
-          </label>
-          <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
-            <input type="checkbox" id="spExtraWheels" onchange="window.recalcSpCart()" style="width:20px; height:20px;">
-            <span>+ Add Spare 8" All-Terrain Spoked Wheel Pair ($79.00)</span>
-          </label>
-        </div>
-
-        <div style="background:#0f172a; border:1px solid #334155; border-radius:12px; padding:16px; margin-bottom:18px; display:flex; justify-content:space-between; align-items:center;">
-          <span style="font-weight:700; color:#cbd5e1;">Total Due Today (Free US Shipping):</span>
-          <strong id="spTotalDue" style="font-size:1.45rem; color:#38bdf8;">$399.00 USD</strong>
-        </div>
-
-        <button type="button" onclick="window.checkoutSurePupsCart()" style="width:100%; padding:15px; background:#0284c7; color:#fff; border:none; border-radius:10px; font-size:1.05rem; font-weight:800; cursor:pointer;">Add Custom Mobility Cart to Order &amp; Checkout →</button>
-        <div id="spOrderAck" role="status" aria-live="polite" style="display:none; margin-top:12px; padding:12px; background:#064e3b; border:1px solid #10b981; border-radius:8px; color:#ecfdf5; font-weight:600;"></div>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#showcase" class="hover:text-cyan-400 transition-colors">Chassis Studio</a>
+        <a href="#engineering" class="hover:text-cyan-400 transition-colors">Engineering</a>
+        <a href="#gallery" class="hover:text-cyan-400 transition-colors">Sizing &amp; Gallery</a>
+        <a href="#video-guide" class="hover:text-cyan-400 transition-colors">How to Measure</a>
+        <a href="#calculator" class="hover:text-cyan-400 transition-colors">Fit Estimator</a>
+        <a href="#faq" class="hover:text-cyan-400 transition-colors">FAQ</a>
       </div>
 
-      <div id="sp-reviews-section" style="background:#1e293b; border:2px solid #334155; border-radius:16px; padding:26px;">
-        <h2 style="margin:0 0 6px 0; font-size:1.4rem;">Verified Dog Parent Reviews</h2>
-        <div id="spReviewsSummary" style="color:#f59e0b; font-weight:700; margin-bottom:16px;">★★★★★ <span style="color:#f8fafc;">5.0 / 5.0</span> <span style="color:#cbd5e1; font-weight:400;">(Verified SurePups Mobility Reviews)</span></div>
-        <div id="spReviewsList" style="margin-bottom:20px;"></div>
+      <a href="#order-form" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm px-5 py-2.5 rounded-full shadow-lg shadow-cyan-500/20 transition-all hover:scale-105">
+        Configure Cart
+      </a>
+    </div>
+  </nav>
 
-        <form id="spReviewForm" onsubmit="return window.submitSpReview(event)" style="background:#0f172a; border:1px solid #334155; border-radius:12px; padding:16px;">
-          <h3 style="margin:0 0 10px 0; font-size:1.05rem;">Share Your Dog's Mobility Story</h3>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
-            <input type="text" id="spRevName" required placeholder="Your Name &amp; Dog's Name" style="padding:10px; border-radius:6px; border:1px solid #475569; background:#1e293b; color:#f8fafc;">
-            <select id="spRevRating" style="padding:10px; border-radius:6px; border:1px solid #475569; background:#1e293b; color:#f8fafc;">
-              <option value="5" selected>★★★★★ (5/5)</option>
-              <option value="4">★★★★☆ (4/5)</option>
-              <option value="3">★★★☆☆ (3/5)</option>
-              <option value="2">★★☆☆☆ (2/5)</option>
-              <option value="1">★☆☆☆☆ (1/5)</option>
-            </select>
+  <!-- ================= HERO SECTION ================= -->
+  <header class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+          <div class="inline-flex items-center space-x-2 bg-slate-900 border border-slate-800 px-4 py-1.5 rounded-full text-xs font-semibold text-cyan-400">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <span>Affordable, customized freedom for your family member</span>
           </div>
-          <textarea id="spRevComment" required minlength="10" rows="3" placeholder="How did the custom 3D-printed cart fit your pup?" style="width:100%; padding:10px; border-radius:6px; border:1px solid #475569; background:#1e293b; color:#f8fafc; box-sizing:border-box; margin-bottom:10px;"></textarea>
-          <button type="submit" id="spRevBtn" style="background:#16a34a; color:#fff; border:none; border-radius:8px; padding:10px 18px; font-weight:700; cursor:pointer;">Submit SurePups Review</button>
-          <span id="spRevStatus" style="margin-left:10px; font-size:0.9rem; font-weight:700;"></span>
-        </form>
+
+          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Give Your Dog Back <br class="hidden sm:inline">
+            <span class="gradient-text">Pure Joy In Motion.</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+            Engineered with 6061-T6 lightweight aluminum alloy, soft-touch protective bumpers, and quick-release polymer snap buckles. Designed with generous clearances and smooth contours to help reduce friction and pressure points.
+          </p>
+
+          <div class="grid grid-cols-3 gap-4 border-y border-slate-800 py-4 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <p class="text-2xl font-bold text-white">6061-T6</p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider">Structural Alloy</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-cyan-400">5 Sec</p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider">Snap-In Buckles</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-indigo-400">Comfortable</p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider">Soft material contact on their skin or fur</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="#order-form" class="w-full sm:w-auto text-center bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-base px-8 py-4 rounded-xl shadow-xl shadow-cyan-500/20 transition-all hover:scale-105 flex items-center justify-center space-x-2">
+              <span>Start Custom Sizing</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+            <a href="#showcase" class="w-full sm:w-auto text-center bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold text-base px-8 py-4 rounded-xl transition-all flex items-center justify-center space-x-2">
+              <i data-lucide="layers" class="w-5 h-5 text-cyan-400"></i>
+              <span>Interactive 360 Studio</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 group aspect-[4/3] sm:aspect-square flex items-center justify-center">
+            <img
+              id="hero-cart-img"
+              src="medium-dog.jpg"
+              alt="Bernedoodle trotting on trail in SurePups custom mobility cart"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            >
+            <div class="absolute bottom-4 inset-x-4">
+              <div class="bg-slate-950/90 backdrop-blur-md border border-slate-800 p-3.5 rounded-2xl flex items-center space-x-3">
+                <div class="p-2 rounded-xl bg-cyan-500/20 text-cyan-400">
+                  <i data-lucide="sparkles" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-white">Bare Brushed Aluminum</h4>
+                  <p class="text-[11px] text-slate-400">Unpainted 6061-T6 structural alloy rails with modular accents.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </main>
+  </header>
 
+  <!-- ================= INTERACTIVE PRODUCT VIEW STUDIO ================= -->
+  <section id="showcase" class="py-24 bg-slate-950 border-y border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div class="inline-flex items-center space-x-2 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full text-xs font-bold text-cyan-400">
+          <i data-lucide="rotate-3d" class="w-3.5 h-3.5"></i>
+          <span>Multi-Perspective CAD Studio</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Inspect The Chassis From Every Angle</h2>
+        <p class="text-slate-400 text-sm">
+          Select an angle below to inspect the bare 6061-T6 tubular architecture, 7&deg; cambered stance, and soft-touch TPU hoods.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-8">
+          <div class="relative rounded-3xl overflow-hidden border-2 border-slate-800 bg-slate-900 aspect-[16/9] shadow-2xl flex items-center justify-center">
+            <img
+              id="main-stage-img"
+              src="above-view.png"
+              alt="SurePups 3D Cart View"
+              class="w-full h-full object-cover transition-opacity duration-300"
+            >
+
+            <div class="absolute top-4 left-4">
+              <span id="stage-badge" class="bg-slate-950/85 backdrop-blur-md border border-slate-800 text-xs font-bold text-cyan-400 px-3.5 py-1.5 rounded-full flex items-center space-x-2">
+                <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+                <span id="stage-badge-text">Isometric 3/4 View</span>
+              </span>
+            </div>
+
+            <div class="absolute bottom-4 inset-x-4">
+              <div class="bg-slate-950/90 backdrop-blur-md border border-slate-800 p-4 rounded-2xl flex items-center justify-between">
+                <div>
+                  <h4 id="stage-detail-title" class="text-xs sm:text-sm font-bold text-white">Full Parametric Rigid Assembly</h4>
+                  <p id="stage-detail-sub" class="text-[11px] text-slate-400">0.75" 6061-T6 structural alloy with 7&deg; negative camber running gear.</p>
+                </div>
+                <span class="hidden sm:inline-block text-[11px] font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-500/40 px-3 py-1 rounded-full">
+                  Zero Front Crossbars
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 space-y-3">
+          <p class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-2">Select Angle Perspective</p>
+          
+          <button
+            type="button"
+            onclick="setStageView('above-view.png', 'Isometric 3/4 View', 'Full Parametric Rigid Assembly', '0.75&quot; 6061-T6 structural alloy with 7&deg; negative camber running gear.', this)"
+            class="thumb-btn active w-full bg-slate-900 border-2 border-slate-800 hover:border-cyan-500/60 p-3 rounded-2xl flex items-center space-x-4 transition-all text-left group"
+          >
+            <div class="w-16 h-12 rounded-xl bg-slate-950 overflow-hidden border border-slate-800 flex-shrink-0">
+              <img src="above-view.png" alt="Isometric" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white group-hover:text-cyan-400 transition-colors">Isometric (Above 3/4)</p>
+              <p class="text-[11px] text-slate-400">Balanced structural overview</p>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            onclick="setStageView('left-view.png', 'Side-Profile Profile View', 'Level Rail &amp; Axle Geometry', 'Parallel spine tracking and quick-release polymer snap buckle points.', this)"
+            class="thumb-btn w-full bg-slate-900 border-2 border-slate-800 hover:border-cyan-500/60 p-3 rounded-2xl flex items-center space-x-4 transition-all text-left group"
+          >
+            <div class="w-16 h-12 rounded-xl bg-slate-950 overflow-hidden border border-slate-800 flex-shrink-0">
+              <img src="left-view.png" alt="Side View" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white group-hover:text-cyan-400 transition-colors">Side Profile (Left)</p>
+              <p class="text-[11px] text-slate-400">Flank height &amp; rail line</p>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            onclick="setStageView('rear-view.png', 'Direct Rear Stance View', '7&deg; Camber Wheel Base', 'Outward flaring flat-free rubber wheels for anti-tip rollover security.', this)"
+            class="thumb-btn w-full bg-slate-900 border-2 border-slate-800 hover:border-cyan-500/60 p-3 rounded-2xl flex items-center space-x-4 transition-all text-left group"
+          >
+            <div class="w-16 h-12 rounded-xl bg-slate-950 overflow-hidden border border-slate-800 flex-shrink-0">
+              <img src="rear-view.png" alt="Rear View" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white group-hover:text-cyan-400 transition-colors">Rear Stance (Back)</p>
+              <p class="text-[11px] text-slate-400">Crossbar &amp; wheel camber</p>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            onclick="setStageView('top-view.png', 'Top-Down Plan View', 'Open U-Chassis Envelope', 'Clear inner passage with zero obstruction to hips or spine.', this)"
+            class="thumb-btn w-full bg-slate-900 border-2 border-slate-800 hover:border-cyan-500/60 p-3 rounded-2xl flex items-center space-x-4 transition-all text-left group"
+          >
+            <div class="w-16 h-12 rounded-xl bg-slate-950 overflow-hidden border border-slate-800 flex-shrink-0">
+              <img src="top-view.png" alt="Top View" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white group-hover:text-cyan-400 transition-colors">Top-Down (Plan View)</p>
+              <p class="text-[11px] text-slate-400">Width clearance &amp; symmetry</p>
+            </div>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ENGINEERING HIGHLIGHTS ================= -->
+  <section id="engineering" class="py-24 bg-slate-900/40 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <h2 class="text-xs uppercase font-bold tracking-widest text-cyan-400">Thoughtful Design</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white">Re-Engineering Canine Freedom</p>
+        <p class="text-slate-400 text-sm">We eliminated heavy steel, rigid front bars, and uncomfortable friction points.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl relative hover:border-slate-700 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-6">
+            <i data-lucide="maximize-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Open-Front U-Chassis</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Zero metal bars across the front. The side rails float comfortably along the flanks and snap into a soft, breathable chest harness at the shoulders.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl relative hover:border-slate-700 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-6">
+            <i data-lucide="zap" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">High-Strength Snap Buckles</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Snap-in quick-release polymer connectors allow you to secure or release your dog in under 5 seconds with a simple one-handed pinch.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl relative hover:border-slate-700 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 flex items-center justify-center mb-6">
+            <i data-lucide="compass" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">7&deg; Camber Stability</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Outward-angled all-terrain wheels create a wide base that prevents tipping on turns, gravel paths, and uneven grass.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-16 max-w-4xl mx-auto">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl grid grid-cols-1 md:grid-cols-12 items-center">
+          <div class="md:col-span-5 h-64 md:h-full relative">
+            <img
+              src="macro-detail.jpg"
+              alt="Macro close up of unpainted aluminum tube, soft TPU protective bumper, and snap buckle"
+              class="w-full h-full object-cover"
+            >
+          </div>
+          <div class="md:col-span-7 p-8 space-y-4">
+            <div class="inline-flex items-center space-x-2 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full text-xs font-semibold text-indigo-400">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+              <span>Hardware Close-Up</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Precision Joinery &amp; Protection</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Every connection point utilizes raw 6061-T6 alloy paired with radiused soft-touch polymer hoods. This protects your dog's flanks during active turns while keeping the core structure lightweight and durable.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SIZE & GALLERY SHOWCASE ================= -->
+  <section id="gallery" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <h2 class="text-xs uppercase font-bold tracking-widest text-cyan-400">Breed Adaptability</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Tailored for Every Breed Size</p>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md mt-4 md:mt-0">
+          Click any breed class below to automatically populate the fit estimator and order form with starting baseline measurements.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1: Small Dog -->
+        <div
+          onclick="applyPreset({weight: 12, breed: 'Miniature Dachshund', flank: 6.0, length: 11.5, hip: 4.2})"
+          class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-cyan-500/60 cursor-pointer transition-all duration-300 hover:scale-[1.02] flex flex-col group shadow-lg hover:shadow-cyan-500/10"
+        >
+          <div class="relative h-64 overflow-hidden bg-slate-950 flex items-center justify-center">
+            <img
+              id="img-small"
+              src="small-dog.jpg"
+              alt="Miniature Dachshund running in SurePups custom mobility cart"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            >
+            <span class="absolute top-4 left-4 bg-slate-950/80 border border-slate-800 text-[11px] font-bold text-cyan-400 px-3 py-1 rounded-full">
+              Mini Class (&lt; 25 lbs)
+            </span>
+            <span class="absolute bottom-4 right-4 bg-cyan-500/90 text-slate-950 font-bold text-[11px] px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center space-x-1">
+              <span>Select Mini Preset</span>
+              <i data-lucide="arrow-down" class="w-3 h-3"></i>
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">Low-Rider &amp; Toy Breeds</h3>
+              <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                Ultralight 0.50" aluminum tubing and smooth polyurethane wheels engineered to maintain a level, natural posture for long-backed breeds.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300">
+              <span>Chassis Tare: <strong>&lt; 2.0 lbs</strong></span>
+              <span>Sample: <strong>12 lbs</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Medium Dog -->
+        <div
+          onclick="applyPreset({weight: 48, breed: 'Bernedoodle', flank: 9.5, length: 15.0, hip: 5.5})"
+          class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-indigo-500/60 cursor-pointer transition-all duration-300 hover:scale-[1.02] flex flex-col group shadow-lg hover:shadow-indigo-500/10"
+        >
+          <div class="relative h-64 overflow-hidden bg-slate-950 flex items-center justify-center">
+            <img
+              id="img-medium"
+              src="medium-dog.jpg"
+              alt="Bernedoodle trotting on trail in SurePups custom mobility cart"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            >
+            <span class="absolute top-4 left-4 bg-slate-950/80 border border-slate-800 text-[11px] font-bold text-indigo-400 px-3 py-1 rounded-full">
+              Standard Class (25–60 lbs)
+            </span>
+            <span class="absolute bottom-4 right-4 bg-indigo-500/90 text-white font-bold text-[11px] px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center space-x-1">
+              <span>Select Medium Preset</span>
+              <i data-lucide="arrow-down" class="w-3 h-3"></i>
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">Active Mid-Size Breeds</h3>
+              <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                0.75" 6061-T6 alloy frame with 8" flat-free all-terrain wheels and flexible pelvic suspension. Built for trail walks and backyard play.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300">
+              <span>Chassis Tare: <strong>~3.8 lbs</strong></span>
+              <span>Sample: <strong>48 lbs</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Large Dog -->
+        <div
+          onclick="applyPreset({weight: 95, breed: 'Labrador Retriever', flank: 14.0, length: 22.0, hip: 8.0})"
+          class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-pink-500/60 cursor-pointer transition-all duration-300 hover:scale-[1.02] flex flex-col group shadow-lg hover:shadow-pink-500/10"
+        >
+          <div class="relative h-64 overflow-hidden bg-slate-950 flex items-center justify-center">
+            <img
+              id="img-large"
+              src="large-dog.jpg"
+              alt="Yellow Labrador walking with SurePups heavy duty mobility cart"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            >
+            <span class="absolute top-4 left-4 bg-slate-950/80 border border-slate-800 text-[11px] font-bold text-pink-400 px-3 py-1 rounded-full">
+              Heavy Duty (60–110+ lbs)
+            </span>
+            <span class="absolute bottom-4 right-4 bg-pink-500/90 text-white font-bold text-[11px] px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center space-x-1">
+              <span>Select Large Preset</span>
+              <i data-lucide="arrow-down" class="w-3 h-3"></i>
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-pink-400 transition-colors">Large &amp; Heavy Breeds</h3>
+              <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                Reinforced 1.00" tubing with high-load joint clamps and 12" spoked knobby rubber wheels for Labs, Shepherds, and large breeds.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300">
+              <span>Chassis Tare: <strong>~6.5 lbs</strong></span>
+              <span>Sample: <strong>95 lbs</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VIDEO TUTORIAL ================= -->
+  <section id="video-guide" class="py-20 bg-slate-900/60 border-y border-slate-800 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center space-x-2 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1.5 rounded-full text-xs font-bold text-cyan-400">
+            <i data-lucide="play" class="w-3.5 h-3.5 fill-cyan-400"></i>
+            <span>60-Second Video Tutorial</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            How to Measure Your Dog <br class="hidden sm:inline">
+            <span class="gradient-text">In Under Two Minutes.</span>
+          </h2>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Watch our step-by-step demonstration on a wavy-coated Bernedoodle. See exactly where to place the tape, how to compress the fluff to the skin, and how to measure true body width using two flat books.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="flex items-start space-x-3">
+              <div class="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-400 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-300"><strong class="text-white">Flank Height:</strong> Measure from floor straight to the groin fold.</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-400 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-300"><strong class="text-white">Body Length:</strong> Shoulder blade ridge straight along the spine to tail base.</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-400 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-300"><strong class="text-white">Width Caliper Trick:</strong> Hold two books against ribs/hips for optimal measurement accuracy.</p>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a href="#order-form" class="inline-flex items-center space-x-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-cyan-500/20 transition-all hover:scale-105">
+              <span>Ready? Enter Measurements Below</span>
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 flex justify-center">
+          <div class="relative w-full max-w-md rounded-3xl overflow-hidden border-2 border-slate-700/80 shadow-2xl bg-slate-950 shadow-cyan-500/10">
+            <video
+              id="measurement-video"
+              src="how-to-measure.mp4"
+              poster="medium-dog.jpg"
+              controls
+              playsinline
+              preload="metadata"
+              class="w-full h-auto aspect-[9/16] sm:max-h-[540px] object-cover"
+            >
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="absolute top-4 left-4 pointer-events-none">
+              <span class="bg-slate-950/85 backdrop-blur-md border border-slate-700/80 text-[11px] font-bold text-white px-3 py-1 rounded-full flex items-center space-x-1.5">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                <span>Bernedoodle Sizing Demo</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE FIT ESTIMATOR ================= -->
+  <section id="calculator" class="py-20 bg-slate-900/30 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center space-y-2 mb-10">
+        <h2 class="text-xs uppercase font-bold tracking-widest text-cyan-400">Quick Sizing Tool</h2>
+        <p class="text-2xl sm:text-3xl font-extrabold text-white">Estimate Your Dog's Custom Cart Specs</p>
+        <p class="text-slate-400 text-xs sm:text-sm">Drag the slider to immediately preview specs and auto-populate your starting weight below.</p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 space-y-8">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <label for="weight-slider" class="text-sm font-bold text-slate-200">Dog's Weight:</label>
+            <span id="weight-display" class="text-2xl font-extrabold text-cyan-400">45 lbs</span>
+          </div>
+          <input
+            type="range"
+            id="weight-slider"
+            min="5"
+            max="120"
+            value="45"
+            class="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-500"
+          >
+          <div class="flex justify-between text-xs text-slate-500 mt-2 font-medium">
+            <span>5 lbs (Toy)</span>
+            <span>50 lbs (Medium)</span>
+            <span>120 lbs (Giant)</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-950/70 p-5 rounded-2xl border border-slate-800">
+          <div>
+            <span class="text-[11px] text-slate-400 uppercase font-semibold">Recommended Tier</span>
+            <p id="calc-tier" class="text-base font-bold text-white mt-1">Standard Class</p>
+          </div>
+          <div>
+            <span class="text-[11px] text-slate-400 uppercase font-semibold">Frame Tubing</span>
+            <p id="calc-tube" class="text-base font-bold text-cyan-400 mt-1">0.75" 6061-T6 Alloy</p>
+          </div>
+          <div>
+            <span class="text-[11px] text-slate-400 uppercase font-semibold">Running Gear</span>
+            <p id="calc-wheel" class="text-base font-bold text-indigo-400 mt-1">8" Flat-Free Rubber</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+          <div>
+            <span class="text-xs text-slate-400 uppercase block">Complete Custom Cart Price</span>
+            <span class="text-3xl font-extrabold text-white">$265.00</span>
+            <span class="text-xs text-emerald-400 font-medium block">Includes Custom Slicing &amp; Padded Harness</span>
+          </div>
+          <a href="#order-form" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-6 py-3 rounded-xl transition-all text-center text-sm">
+            Begin Sizing
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INTAKE & SIZING ORDER FORM ================= -->
+  <section id="order-form" class="py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center space-y-3 mb-10">
+        <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full text-xs font-semibold text-emerald-400">
+          <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+          <span>SurePups Tailored Fit Support</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Configure Your Dog's Custom Cart</h2>
+        <p class="text-slate-400 text-sm">Values are pre-filled based on your selection above. Adjust with your dog's exact measurements.</p>
+      </div>
+
+      <form id="cart-order-form" class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">Dog's Name</label>
+            <input required type="text" id="input-dog-name" name="dog_name" placeholder="e.g., Starbuck" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors">
+          </div>
+          <div>
+            <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">Breed / Mix</label>
+            <input required type="text" id="input-dog-breed" name="dog_breed" placeholder="e.g., Bernedoodle" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors">
+          </div>
+          <div>
+            <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">Your Name</label>
+            <input required type="text" id="input-owner-name" name="owner_name" placeholder="First & Last Name" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500">
+          </div>
+          <div>
+            <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">Email Address</label>
+            <input required type="email" id="input-owner-email" name="owner_email" placeholder="you@example.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500">
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <h3 class="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-3">Measurements (Inches)</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div>
+              <label class="block text-[11px] text-slate-400 mb-1">Weight (lbs)</label>
+              <input required type="number" step="0.1" id="input-weight" name="weight" placeholder="48" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors">
+            </div>
+            <div>
+              <label class="block text-[11px] text-slate-400 mb-1">[1] Flank Height (in)</label>
+              <input required type="number" step="0.1" id="input-flank" name="flank_height" placeholder="9.5" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors">
+            </div>
+            <div>
+              <label class="block text-[11px] text-slate-400 mb-1">[2] Body Length (in)</label>
+              <input required type="number" step="0.1" id="input-length" name="body_length" placeholder="15.0" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors">
+            </div>
+            <div>
+              <label class="block text-[11px] text-slate-400 mb-1">[3/4] Hip Width (in)</label>
+              <input required type="number" step="0.1" id="input-hip" name="hip_width" placeholder="5.5" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase font-bold text-slate-300 mb-1.5">Profile Photo (Optional)</label>
+          <div class="border border-dashed border-slate-800 hover:border-slate-700 rounded-2xl p-5 text-center cursor-pointer transition-colors bg-slate-950/50" onclick="document.getElementById('file-upload').click()">
+            <i data-lucide="camera" class="w-6 h-6 text-cyan-400 mx-auto mb-1.5"></i>
+            <p class="text-xs text-slate-300 font-medium">Click to upload lateral side-profile of your dog</p>
+            <input type="file" id="file-upload" name="photo" accept="image/*" class="hidden">
+            <span id="file-name" class="inline-block mt-1 text-xs font-bold text-cyan-400"></span>
+          </div>
+        </div>
+
+        <!-- Legal Consent & Communications Checkbox -->
+        <div class="space-y-3 pt-2">
+          <div class="flex items-start space-x-3">
+            <div class="flex items-center h-5">
+              <input
+                id="consent-checkbox"
+                name="consent_terms"
+                type="checkbox"
+                required
+                class="w-4 h-4 rounded border-slate-800 bg-slate-950 text-cyan-500 focus:ring-cyan-500 focus:ring-offset-slate-900"
+              >
+            </div>
+            <div class="text-xs text-slate-400 leading-relaxed">
+              <label for="consent-checkbox" class="select-none">
+                I agree to the
+                <a href="/terms" target="_blank" class="text-cyan-400 hover:underline">Terms of Service</a>
+                and
+                <a href="/privacy" target="_blank" class="text-cyan-400 hover:underline">Privacy Policy</a>.
+                I understand that fit depends on user-provided measurements and agree to receive transactional emails and build updates regarding this custom cart.
+              </label>
+            </div>
+          </div>
+
+          <!-- Veterinary / Safety Acknowledgment -->
+          <div class="flex items-start space-x-3">
+            <div class="flex items-center h-5">
+              <input
+                id="vet-ack-checkbox"
+                name="consent_vet"
+                type="checkbox"
+                required
+                class="w-4 h-4 rounded border-slate-800 bg-slate-950 text-cyan-500 focus:ring-cyan-500 focus:ring-offset-slate-900"
+              >
+            </div>
+            <div class="text-xs text-slate-400 leading-relaxed">
+              <label for="vet-ack-checkbox" class="select-none">
+                I confirm that my veterinarian has approved the use of a canine mobility cart for my dog's current condition and that this device is intended strictly for supervised exercise.
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-base py-3.5 rounded-xl shadow-lg shadow-cyan-500/20 transition-all hover:scale-[1.01]">
+          Proceed to Final Quote & Checkout ($265.00)
+        </button>
+      </form>
+
+      <!-- Success Card -->
+      <div id="success-message" class="hidden mt-6 bg-emerald-950/80 border border-emerald-500/50 rounded-2xl p-6 text-center">
+        <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3">
+          <i data-lucide="check" class="w-6 h-6"></i>
+        </div>
+        <h4 class="text-lg font-bold text-white">Measurements Received!</h4>
+        <p class="text-sm text-slate-300 mt-1">Our parametric engine is generating your custom cut sheet. Look out for an email confirmation shortly.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq" class="py-20 bg-slate-900/40 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white text-center mb-8">Frequently Asked Questions</h2>
+      
+      <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
+        <h4 class="font-bold text-white text-sm">Can my dog still go potty while using the cart?</h4>
+        <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+          Yes! The flexible ergonomic saddle gently supports their pelvis while leaving open clearance so your dog can comfortably go potty on walks without needing to be unstrapped.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
+        <h4 class="font-bold text-white text-sm">How long does custom fabrication take?</h4>
+        <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+          Because our CAD files and cut sheets are generated automatically from your measurements, your cart is custom printed, cut, and typically ships within 3 to 5 business days from measurement confirmation.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
+        <h4 class="font-bold text-white text-sm">What if the fit is slightly off?</h4>
+        <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+          The frame includes &plusmn;1.5 inches of sliding adjustments on the side rails and axle struts. If a component needs resizing, your order includes one complimentary set of replacement 3D-printed adjustment joints within 30 days of delivery (customer covers return shipping of original parts, or shipping fees apply). Complete structural frame rebuilds due to initial customer measurement discrepancy are subject to a remanufacturing materials fee.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-12 border-t border-slate-900 bg-slate-950 text-slate-500 text-xs text-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
+      <p>&copy; 2026 SurePups Mobility. Engineered with parametric 6061-T6 alloy and skin-safe, hypoallergenic TPU.</p>
+      <p class="text-slate-400 text-[11px] max-w-2xl mx-auto">Veterinary Advice Disclaimer: SurePups mobility carts are mobility aids, not therapeutic or medical cures. Always consult your licensed veterinarian or canine physical rehabilitation practitioner before introducing your pet to any mobility cart, especially following acute injury, spinal trauma, or orthopedic surgery.</p>
+      <p>Questions? Contact us at <span class="text-slate-400">contact@SurePups.com</span></p>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
   <script>
-  (function() {
-    var SB_URL = 'https://fcpexvejdqvizvrwvyce.supabase.co';
-    var SB_KEY = 'sb_publishable_CyXe5d6LLrcbssGfXOHHSg_i83EbGpW';
+    // 1. Initialize Supabase Client
+    const SUPABASE_URL = 'https://akiotrmtbnqmmtdrtrpx.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_t-HfU8QUPUSQpe8bj2T4-A_S2P76V6o';
+    const supabaseClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 
-    window.recalcSpCart = function() {
-      var sel = document.getElementById('spSizeSelect');
-      var basePrice = sel.value === 'SP-CART-SM-349' ? 349 : 399;
-      var extraH = document.getElementById('spExtraHarness').checked ? 59 : 0;
-      var extraW = document.getElementById('spExtraWheels').checked ? 79 : 0;
-      var total = basePrice + extraH + extraW;
-      document.getElementById('spTotalDue').textContent = '$' + total.toFixed(2) + ' USD';
-      return { sku: sel.value, total: total };
-    };
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
 
-    window.checkoutSurePupsCart = function() {
-      var info = window.recalcSpCart();
-      var dog = document.getElementById('spDogName').value.trim() || 'Pup';
-      var height = document.getElementById('spLegHeight').value;
-      var color = document.getElementById('spColorSelect').value;
-      var orderObj = {
-        orderId: 'SP-' + Math.floor(100000 + Math.random() * 900000),
-        sku: info.sku,
-        dogName: dog,
-        groinHeightIn: height,
-        color: color,
-        totalDue: info.total,
-        createdAt: new Date().toISOString()
-      };
-      localStorage.setItem('sp_cart', JSON.stringify(orderObj));
-      var ack = document.getElementById('spOrderAck');
-      ack.style.display = 'block';
-      ack.textContent = '✓ Custom Cart Saved (' + orderObj.orderId + ' for ' + dog + ', ' + height + '" height, ' + color + ') — Total: $' + info.total.toFixed(2) + ' USD.';
-    };
+    // Multi-View Stage Switcher
+    function setStageView(imgSrc, badgeText, detailTitle, detailSub, btnElement) {
+      const stageImg = document.getElementById('main-stage-img');
+      const stageBadgeText = document.getElementById('stage-badge-text');
+      const stageTitle = document.getElementById('stage-detail-title');
+      const stageSub = document.getElementById('stage-detail-sub');
 
-    window.submitSpReview = async function(e) {
-      e.preventDefault();
-      var btn = document.getElementById('spRevBtn');
-      var st = document.getElementById('spRevStatus');
-      var sku = document.getElementById('spSizeSelect').value || 'SP-CART-LG-399';
-      btn.disabled = true;
-      st.style.color = '#38bdf8';
-      st.textContent = 'Submitting...';
-      try {
-        var res = await fetch(SB_URL + '/rest/v1/product_reviews', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY, 'Prefer': 'return=minimal' },
-          body: JSON.stringify({
-            product_sku: sku,
-            reviewer_name: document.getElementById('spRevName').value.trim(),
-            rating: parseInt(document.getElementById('spRevRating').value, 10) || 5,
-            comment: document.getElementById('spRevComment').value.trim(),
-            verified_purchase: true,
-            approved: false
-          })
-        });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        st.style.color = '#4ade80';
-        st.textContent = '✓ Submitted to unified Customer Service Portal!';
-        document.getElementById('spReviewForm').reset();
-      } catch (err) {
-        st.style.color = '#ef4444';
-        st.textContent = 'Error submitting review.';
-      } finally {
-        btn.disabled = false;
+      stageImg.style.opacity = '0';
+      setTimeout(() => {
+        stageImg.src = imgSrc;
+        stageBadgeText.textContent = badgeText;
+        stageTitle.innerHTML = detailTitle;
+        stageSub.innerHTML = detailSub;
+        stageImg.style.opacity = '1';
+      }, 150);
+
+      document.querySelectorAll('.thumb-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) {
+        btnElement.classList.add('active');
       }
-      return false;
-    };
-
-    async function loadSpReviews() {
-      var box = document.getElementById('spReviewsList');
-      try {
-        var res = await fetch(SB_URL + '/rest/v1/product_reviews?approved=eq.true&select=*&order=created_at.desc', {
-          headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY }
-        });
-        var rows = await res.json();
-        var spRows = (Array.isArray(rows) ? rows : []).filter(function(r) {
-          var s = String(r.product_sku || '').toUpperCase();
-          return s.indexOf('SP-') === 0 || s.indexOf('SUREPUPS') !== -1;
-        });
-        if (spRows.length === 0) {
-          spRows = [{ reviewer_name: 'Marcus & Barnaby', rating: 5, comment: 'The 6061-T6 brushed aluminum rails and custom 3D-printed parametric saddle fit our senior dog on the first try. Rolling smoothly on trails again!' }];
-        }
-        box.innerHTML = spRows.map(function(r) {
-          return '<div style="background:#0f172a; border:1px solid #334155; border-radius:10px; padding:14px; margin-bottom:10px;">' +
-            '<div style="display:flex; justify-content:space-between; margin-bottom:6px;"><strong>' + r.reviewer_name + ' <span style="color:#4ade80; font-size:0.78rem;">✓ Verified Buyer</span></strong><span style="color:#f59e0b;">' + '★'.repeat(r.rating || 5) + '</span></div>' +
-            '<div style="color:#cbd5e1; font-size:0.92rem;">"' + r.comment + '"</div></div>';
-        }).join('');
-      } catch (e) {}
     }
 
-    document.addEventListener('DOMContentLoaded', loadSpReviews);
-  })();
+    // Sizing Calculator & Presets
+    const slider = document.getElementById('weight-slider');
+    const display = document.getElementById('weight-display');
+    const tierText = document.getElementById('calc-tier');
+    const tubeText = document.getElementById('calc-tube');
+    const wheelText = document.getElementById('calc-wheel');
+
+    const inputWeight = document.getElementById('input-weight');
+    const inputBreed = document.getElementById('input-dog-breed');
+    const inputFlank = document.getElementById('input-flank');
+    const inputLength = document.getElementById('input-length');
+    const inputHip = document.getElementById('input-hip');
+
+    function updateCalculatorUI(weight) {
+      display.textContent = `${weight} lbs`;
+
+      if (weight < 25) {
+        tierText.textContent = "Mini Class (< 25 lbs)";
+        tubeText.textContent = '0.50" 6061-T6 Alloy';
+        wheelText.textContent = '4" Polyurethane';
+      } else if (weight <= 60) {
+        tierText.textContent = "Standard Class (25–60 lbs)";
+        tubeText.textContent = '0.75" 6061-T6 Alloy';
+        wheelText.textContent = '8" Flat-Free EVA/Rubber';
+      } else {
+        tierText.textContent = "Heavy Duty (60–110+ lbs)";
+        tubeText.textContent = '1.00" 6061-T6 Alloy';
+        wheelText.textContent = '12" Spoked Rubber Tires';
+      }
+    }
+
+    function highlightField(el) {
+      el.classList.add('border-cyan-400', 'bg-slate-900');
+      setTimeout(() => {
+        el.classList.remove('border-cyan-400', 'bg-slate-900');
+      }, 1000);
+    }
+
+    if (slider) {
+      slider.addEventListener('input', (e) => {
+        const weight = parseFloat(e.target.value);
+        updateCalculatorUI(weight);
+        if (inputWeight) {
+          inputWeight.value = weight;
+        }
+      });
+    }
+
+    window.applyPreset = function(preset) {
+      if (slider) slider.value = preset.weight;
+      updateCalculatorUI(preset.weight);
+
+      if (inputWeight) inputWeight.value = preset.weight;
+      if (inputBreed) inputBreed.value = preset.breed;
+      if (inputFlank) inputFlank.value = preset.flank;
+      if (inputLength) inputLength.value = preset.length;
+      if (inputHip) inputHip.value = preset.hip;
+
+      const orderFormSection = document.getElementById('order-form');
+      if (orderFormSection) {
+        orderFormSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      [inputWeight, inputBreed, inputFlank, inputLength, inputHip].forEach(el => {
+        if (el) highlightField(el);
+      });
+    };
+
+    // File Input Name Display
+    const fileInput = document.getElementById('file-upload');
+    const fileNameDisplay = document.getElementById('file-name');
+    if (fileInput) {
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+          fileNameDisplay.textContent = `Selected: ${e.target.files[0].name}`;
+        }
+      });
+    }
+
+    // Form Submission & Conversion Tracking
+    const orderForm = document.getElementById('cart-order-form');
+    const successMsg = document.getElementById('success-message');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (orderForm) {
+      orderForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        console.log("🛠️ [DEBUG] Form submit triggered. Disabling button.");
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Processing measurements...";
+
+        const payload = {
+          dog_name: document.getElementById('input-dog-name').value,
+          dog_breed: document.getElementById('input-dog-breed').value,
+          owner_name: document.getElementById('input-owner-name').value,
+          owner_email: document.getElementById('input-owner-email').value,
+          weight: parseFloat(document.getElementById('input-weight').value),
+          flank_height: parseFloat(document.getElementById('input-flank').value),
+          body_length: parseFloat(document.getElementById('input-length').value),
+          hip_width: parseFloat(document.getElementById('input-hip').value),
+          terms_accepted: document.getElementById('consent-checkbox').checked,
+          vet_clearance_accepted: document.getElementById('vet-ack-checkbox').checked,
+          consent_timestamp: new Date().toISOString()
+        };
+
+        console.log("🛠️ [DEBUG] Data payload prepared:", payload);
+
+        try {
+          if (!supabaseClient) {
+            throw new Error("Supabase client failed to load. Check your network or AdBlocker.");
+          }
+
+          console.log("🛠️ [DEBUG] Sending POST request to Supabase...");
+          const { data, error, status } = await supabaseClient.from('cart_leads').insert([payload]);
+          
+          console.log(`🛠️ [DEBUG] Supabase responded with HTTP Status: ${status}`);
+
+          if (error) {
+            console.error("🛠️ [DEBUG] Supabase rejected the insert. Error Object:", error);
+            throw new Error(`DB Error (${error.code || 'Unknown'}): ${error.message || error.details}`);
+          }
+
+          console.log("🛠️ [DEBUG] Insert successful! Updating UI.");
+
+          // Fire Google Ads / GA4 Conversion Event
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              currency: 'USD',
+              value: 265.00,
+              lead_type: 'custom_cart_measurement'
+            });
+          }
+
+          orderForm.classList.add('hidden');
+          successMsg.classList.remove('hidden');
+          lucide.createIcons();
+        } catch (err) {
+          console.error('🛠️ [DEBUG] Catch Block Triggered:', err);
+          
+          alert('Submission Error:\n\n' + err.message + '\n\nCheck the browser console (F12) for more details.');
+          
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Proceed to Final Quote & Checkout ($265.00)";
+        }
+      });
+    }
   </script>
 </body>
 </html>
